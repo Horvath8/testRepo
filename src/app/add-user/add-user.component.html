@@ -1,0 +1,51 @@
+<div class="col-md-6 user-container">
+  <h2 class="text-center">Add User</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">User Name:</label>
+      <input type="text" formControlName="username" placeholder="username" name="username" id="username"
+             [class.is-invalid]="!(addForm.get('username')?.valid) && addForm.get('username')?.touched"
+             class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" formControlName="password" placeholder="password" name="password" class="form-control"
+             id="password"
+             [class.is-invalid]="!(addForm.get('password')?.valid) && addForm.get('password')?.touched"
+             class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName"
+             [class.is-invalid]="!(addForm.get('firstName')?.valid) && addForm.get('firstName')?.touched"
+             class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName"
+             [class.is-invalid]="!(addForm.get('lastName')?.valid) && addForm.get('lastName')?.touched"
+             class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input type="number" formControlName="age" placeholder="age" name="age" class="form-control" id="age"
+             [class.is-invalid]="!(addForm.get('age')?.valid) && addForm.get('age')?.touched" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="salary">Salary:</label>
+      <input type="number" formControlName="salary" placeholder="salary" name="salary" class="form-control" id="salary"
+             [class.is-invalid]="!(addForm.get('salary')?.valid) && addForm.get('salary')?.touched"
+             class="form-control">
+    </div>
+
+    <div class="alert alert-danger" [hidden]="!userExists" role="alert" id="exists">
+      User with this username alredy exists!
+    </div>
+    <button class="btn btn-success">Add</button>
+  </form>
+</div>
