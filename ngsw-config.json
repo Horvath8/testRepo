@@ -26,5 +26,16 @@
         ]
       }
     }
-  ]
+  ],"dataGroups": [
+  {
+    "name": "product-data",
+    "urls": ["http://localhost:8081/users"],
+    "cacheConfig": {
+      "strategy": "freshness",
+      "timeout": "3s",
+      "maxAge": "60s",
+      "maxSize": 10
+    }
+  }
+]
 }
